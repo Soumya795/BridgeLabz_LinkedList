@@ -38,10 +38,10 @@ public class LinkedListOperations {
             tail = newNode;
         }
         else {
-            INode temp, current;
+            INode temp, current = null;
             int count = (size % 2 == 0) ? (size/2) : ((size + 1) / 2);
             temp = head;
-            current = null;
+            //current = null;
             for(int i=0; i<count; i++) {
                 current = temp;
                 temp = temp.getNext();
@@ -57,6 +57,20 @@ public class LinkedListOperations {
             System.out.println("Linked List is empty!");
         else
             head = head.getNext();
+
+        size--;
+    }
+
+    public void deleteNodeFromLast() {
+        if(head == null)
+            System.out.println("Linked List is empty!");
+        else {
+            INode current = head;
+            while(tail.getNext() != null)
+                current = current.getNext();
+            current.setNext(null);
+        }
+        size--;
     }
 
     public void displayNode() {
