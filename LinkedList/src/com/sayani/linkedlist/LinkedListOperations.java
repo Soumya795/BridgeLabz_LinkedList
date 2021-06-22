@@ -3,17 +3,29 @@ package com.sayani.linkedlist;
 public class LinkedListOperations {
 
     //Represent the head and tail of the singly linked list
-    Node head;
-    Node tail;
+    INode head;
+    INode tail;
     int size;
 
-    public void addNode(Node newNode) {
+    public void addNodeInBeginnig(Node newNode) {
+        if(head == null) {
+            head = newNode;
+            tail = newNode;
+        }
+        else {
+            INode temp = head;
+            head = newNode;
+            head.setNext(temp);
+        }
+    }
+
+    public void addNodeAtEnd(Node newNode) {
         if (head == null) {
             head = newNode;
             tail = newNode;
         }
         else {
-            tail.next = newNode;
+            tail.setNext(newNode);
             tail = newNode;
         }
         size++;
@@ -38,6 +50,13 @@ public class LinkedListOperations {
             newNode.setNext(temp);
         }
         size++;
+    }
+
+    public void deleteNodeFromBeginning() {
+        if(head == null)
+            System.out.println("Linked List is empty!");
+        else
+            head = head.getNext();
     }
 
     public void displayNode() {
