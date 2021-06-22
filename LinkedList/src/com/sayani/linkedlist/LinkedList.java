@@ -1,9 +1,6 @@
 /**
- * Ability to create Linked List by appending 30 and 70 to 56
- * Node with data 56 is First Created
- * Next Append 30 to 56
- * Finally Append 70 to 30
- * LinkedList Sequence: 56->30->70
+ * Ability to insert 30 between 56 and 70
+ * Final Sequence: 56->30->70
  *
  * @author: SAYANI KOLEY
  * @since: 22.06.2021
@@ -20,8 +17,8 @@ public class LinkedList {
         Node<Integer> myThirdNode = new Node<>(70);
 
         operations.addNode(myFirstNode);
-        operations.addNode(mySecondNode);
         operations.addNode(myThirdNode);
+        operations.addNodeInMiddle(mySecondNode);
 
         operations.displayNode();
     }
