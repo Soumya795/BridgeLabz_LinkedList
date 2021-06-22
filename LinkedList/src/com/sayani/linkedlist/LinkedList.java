@@ -1,8 +1,8 @@
 /**
- * Ability to create Linked List by adding 30 and 56 to 70
- * Node with data 70 is First Created
- * Next 30 is added to 70
- * Finally 56 is added to 30
+ * Ability to create Linked List by appending 30 and 70 to 56
+ * Node with data 56 is First Created
+ * Next Append 30 to 56
+ * Finally Append 70 to 30
  * LinkedList Sequence: 56->30->70
  *
  * @author: SAYANI KOLEY
@@ -14,17 +14,15 @@ package com.sayani.linkedlist;
 public class LinkedList {
     public static void main(String[] args) {
         LinkedListOperations operations = new LinkedListOperations();
-        INode head;
 
-        Node<Integer> myFirstNode = new Node<>(70);
+        Node<Integer> myFirstNode = new Node<>(56);
         Node<Integer> mySecondNode = new Node<>(30);
-        Node<Integer> myThirdNode = new Node<>(56);
+        Node<Integer> myThirdNode = new Node<>(70);
 
-        head = operations.addNode(myFirstNode);
-        operations.displayNode(head);
-        head = operations.addNode(mySecondNode);
-        operations.displayNode(head);
-        head = operations.addNode(myThirdNode);
-        operations.displayNode(head);
+        operations.addNode(myFirstNode);
+        operations.addNode(mySecondNode);
+        operations.addNode(myThirdNode);
+
+        operations.displayNode();
     }
 }
